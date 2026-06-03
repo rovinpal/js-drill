@@ -51,16 +51,17 @@ let inventory = [{ "id": 1, "car_make": "Lincoln", "car_model": "Navigator", "ca
 { "id": 50, "car_make": "Lincoln", "car_model": "Town Car", "car_year": 1999 }];
 
 
-// ==== Problem #2 ====
-// The dealer needs the information on the last car in their inventory. Execute a function to find what the make and model of the last car in the inventory is?  Log the make and model into the console in the format of:
-"Last car is a *car make goes here* *car model goes here*"
+// ==== Problem #3 ====
+// The marketing team wants the car models listed alphabetically on the website. Execute a function to Sort all the car model names into alphabetical order and log the results in the console as it was returned.
 
-function getLastcar(inventory) {
+function getCarModelSort(inventory) {
+    let car_model_lists = []
+
     for (let i = 0; i < inventory.length; i++) {
-        if (inventory[i].id === inventory.length) {
-            return `Last car is a ${inventory[i].car_make} ${inventory[i].car_model}`;
-        }
+        car_model_lists.push(inventory[i].car_model);
     }
+
+    return car_model_lists.sort();
 }
 
-module.exports = getLastcar;
+module.exports = getCarModelSort;
